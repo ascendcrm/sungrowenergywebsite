@@ -16,6 +16,29 @@
     * { box-sizing: border-box; }
     input, select { font-family: 'Work Sans', sans-serif; }
     input:focus, select:focus { outline: 2px solid oklch(78% 0.14 85); outline-offset: 1px; }
+    html { overflow-x: hidden; }
+    @media (max-width: 900px) {
+      [data-desktop-nav] { display: none !important; }
+      [data-mobile-toggle] { display: block !important; }
+      [style*="grid-template-columns: 1.1fr 0.9fr"],
+      [style*="grid-template-columns: 0.95fr 1.05fr"],
+      [style*="grid-template-columns: 0.9fr 1.1fr"],
+      [style*="grid-template-columns: 0.8fr 1.2fr"],
+      [style*="grid-template-columns: auto 1fr"],
+      [style*="grid-template-columns: repeat(2, 1fr)"] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns: repeat(4, 1fr)"],
+      [style*="grid-template-columns: repeat(5, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+      h1 { font-size: 38px !important; }
+      section > div > h2, section h2 { font-size: 28px !important; }
+    }
+    @media (max-width: 640px) {
+      [style*="grid-template-columns: repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns: repeat(4, 1fr)"],
+      [style*="grid-template-columns: repeat(5, 1fr)"] { grid-template-columns: 1fr !important; }
+      header > div { padding-left: 16px !important; padding-right: 16px !important; }
+      section { padding-left: 20px !important; padding-right: 20px !important; }
+      h1 { font-size: 32px !important; }
+    }
   </style>
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69d5640b2f3d4cc8adebdd8b"></script>
   <script src="https://links.ascendcrm.io/js/form_embed.js"></script>
@@ -23,11 +46,11 @@
 <div style="background: oklch(97.5% 0.012 75); color: oklch(22% 0.03 255); min-height: 100vh;">
 
   <header style="position: sticky; top: 0; z-index: 50; background: oklch(18% 0.045 258 / 0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08);">
-    <div style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; position: relative;">
       <a href="index.html" style="display: flex; align-items: center;">
         <img src="img/logo.png" alt="SunGrow Energy Home Services" style="height: 42px; border-radius: 6px; display: block;"/>
       </a>
-      <nav style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
+      <nav data-desktop-nav="true" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
         <a href="solar.html" style="font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.82);">Solar</a>
         <a href="hvac.html" style="font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.82);">HVAC</a>
         <a href="roofing.html" style="font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.82);">Roofing</a>
@@ -35,6 +58,19 @@
         <a href="index.html#reviews" style="font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.82);">Reviews</a>
         <a href="index.html#faq" style="font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.82);">FAQ</a>
       </nav>
+      <details data-mobile-toggle style="display: none;">
+        <summary style="list-style: none; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: white; font-size: 22px;">☰</summary>
+        <nav style="position: absolute; top: 100%; left: 0; right: 0; background: oklch(18% 0.045 258); padding: 16px 24px 24px; display: flex; flex-direction: column; gap: 4px; border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 60;">
+          <a href="solar.html" style="padding: 12px 0; font-size: 16px; font-weight: 600; color: white;">Solar</a>
+          <a href="hvac.html" style="padding: 12px 0; font-size: 16px; font-weight: 600; color: white;">HVAC</a>
+          <a href="roofing.html" style="padding: 12px 0; font-size: 16px; font-weight: 600; color: white;">Roofing</a>
+          <a href="about.html" style="padding: 12px 0; font-size: 16px; font-weight: 600; color: white;">Who We Are</a>
+          <a href="index.html#reviews" style="padding: 12px 0; font-size: 16px; font-weight: 600; color: white;">Reviews</a>
+          <a href="index.html#faq" style="padding: 12px 0; font-size: 16px; font-weight: 600; color: white;">FAQ</a>
+          <a href="tel:9789046606" style="padding: 12px 0; font-size: 16px; font-weight: 700; color: oklch(78% 0.14 85);">📞 (978) 904-6606</a>
+          <a href="contact.html" style="margin-top: 8px; background: oklch(48% 0.13 152); color: white; padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center;">Free Assessment →</a>
+        </nav>
+      </details>
       <a href="tel:9789046606" style="font-size: 15px; font-weight: 600; color: oklch(78% 0.14 85); display: flex; align-items: center; gap: 6px;">📞 (978) 904-6606</a>
     </div>
   </header>
